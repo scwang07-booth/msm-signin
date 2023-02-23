@@ -16,4 +16,8 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many(:bookmarks, { :class_name => "Bookmark", :foreign_key => "user_id", :dependent => :destroy })
+  def name
+    full_name = self.first_name + " " + self.last_name
+    return full_name
+  end
 end
