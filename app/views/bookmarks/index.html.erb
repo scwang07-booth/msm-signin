@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      <%= @list_of_bookmarks.first.user.name%>'s bookmarks
+      <%= @current_user.name %>'s bookmarks
     </h1>
   </div>
 </div>
@@ -14,7 +14,7 @@
       <div>
         <select id="movie_id_box" name="query_movie_id">
           <% Movie.all.each do |a_movie| %>
-          <option value=<%= a_movie.id %>><%= a_movie.title %></option>
+            <option value=<%= a_movie.id %>><%= a_movie.title %></option>
           <% end %>
         </select>
       </div>
